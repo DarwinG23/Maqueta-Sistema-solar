@@ -1,0 +1,179 @@
+/*
+ * style.css
+ * Estilos para la simulación interactiva del sistema solar
+ * Autor: [Tu Nombre]
+ * Fecha: 2025-06-16
+ */
+
+body {
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+#solar-system-container {
+    height: 100vh;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
+}
+
+#ui-controls {
+    background: rgba(20, 20, 30, 0.7);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 18px;
+    position: fixed;
+    right: 30px;
+    top: 20px;
+    z-index: 10;
+}
+
+#ui-controls button {
+    background: #222b3a;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 8px 14px;
+    transition: background 0.2s;
+}
+
+#ui-controls button:hover {
+    background: #3a4a6b;
+}
+
+#planet-modal {
+    align-items: center;
+    background: rgba(0,0,0,0.7);
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+}
+
+#planet-modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: #232946;
+    border-radius: 10px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.5);
+    color: #fff;
+    min-width: 320px;
+    max-width: 90vw;
+    padding: 32px 28px;
+    position: relative;
+}
+
+#close-modal {
+    cursor: pointer;
+    font-size: 2rem;
+    position: absolute;
+    right: 18px;
+    top: 12px;
+}
+
+.planet-config {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.planet-config h3 {
+    color: #fff;
+    margin: 0 0 15px;
+}
+
+.config-control {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.config-control label {
+    color: #fff;
+    min-width: 120px;
+}
+
+.config-control input[type="range"] {
+    appearance: none;
+    background: #2a3a5a;
+    border-radius: 3px;
+    flex: 1;
+    height: 6px;
+    outline: none;
+}
+
+.config-control input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    background: #4a8eff;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 16px;
+    transition: background 0.2s;
+    width: 16px;
+}
+
+.config-control input[type="range"]::-webkit-slider-thumb:hover {
+    background: #6ba5ff;
+}
+
+#apply-config {
+    background: #4a8eff;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    margin-top: 15px;
+    padding: 8px 16px;
+    transition: background 0.2s;
+}
+
+#apply-config:hover {
+    background: #6ba5ff;
+}
+
+@media (max-width: 600px) {
+    #ui-controls {
+        bottom: 20px;
+        flex-direction: column;
+        gap: 8px;
+        left: 50%;
+        padding: 10px 8px;
+        position: fixed;
+        right: unset;
+        top: unset;
+        transform: translateX(-50%);
+    }
+
+    .modal-content {
+        min-width: 90vw;
+        padding: 18px 8px;
+    }
+
+    .config-control {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .config-control label {
+        min-width: auto;
+    }
+}
